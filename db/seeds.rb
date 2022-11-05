@@ -21,80 +21,100 @@ service4 = Service.create(
     category: "Same Day Courier",
     description: "Same-day delivery is the act of delivering a package the same day it was sent. If a package is delivered before noon, for example, it will be delivered the same day, in the afternoon. Companies that offer this service advertise it as a same-day service."
 )
-
-Receipt.create([
-    {
-    "receipt_no": "KEN123456",
-    "sender_name": "Grace Neema",
-    "receiver_name": "Marion Jefwa",
-    "amount_paid": 8500,
-    "nature_of_goods": "Flamable",
-    "pickup": "Kawangware",
-    "destination": "Kenyatta",
-    "delivery_id": 1,
-    "created_at": "2022-10-24T07:00:47.076Z",
-    "updated_at": "2022-10-24T07:01:51.306Z"
-    },
-    {
-    "receipt_no": "KEN4563211",
-    "sender_name": "Neema Maitha",
-    "receiver_name": "Tuma Marion",
-    "amount_paid": 10000,
-    "nature_of_goods": "Fragile",
-    "pickup": "Moringa",
-    "destination": "CBD",
-    "delivery_id": 2,
-    "created_at": "2022-10-24T07:03:48.845Z",
-    "updated_at": "2022-10-24T07:03:48.845Z"
-    },
-    {
-    "receipt_no": "KEN875543",
-    "sender_name": "Nickson Shuku",
-    "receiver_name": "Mkare Griffins",
-    "amount_paid": 9000,
-    "nature_of_goods": "Perishable",
-    "pickup": "Kenyatta",
-    "destination": "Zimmer",
-    "delivery_id": 3,
-    "created_at": "2022-10-24T07:05:17.263Z",
-    "updated_at": "2022-10-24T07:05:17.263Z"
-    },
-    {
-    "receipt_no": "KEN4563211",
-    "sender_name": "Neema Maitha",
-    "receiver_name": "Tuma Marion",
-    "amount_paid": 10000,
-    "nature_of_goods": "Fragile",
-    "pickup": "Moringa",
-    "destination": "CBD",
-    "delivery_id": 4,
-    "created_at": "2022-10-24T07:09:09.190Z",
-    "updated_at": "2022-10-24T07:09:09.190Z"
-    },
-    {
-    "receipt_no": "KEN875543",
-    "sender_name": "Shuku Nickson",
-    "receiver_name": "Griffins Mkare",
-    "amount_paid": 9000,
-    "nature_of_goods": "Perishable",
-    "pickup": "Moringa",
-    "destination": "Coptic",
-    "delivery_id": 5,
-    "created_at": "2022-10-24T07:24:43.210Z",
-    "updated_at": "2022-10-24T07:24:43.210Z"
-    }
-])
-
-5.times do
-seeded_deliveries = Delivery.create!(
-    receiver_name: Faker::Name.name,
-    receiver_contact: Faker::PhoneNumber.cell_phone_with_country_code,
-    pickup_instructions: Faker::Lorem.sentences(number: 1),
-    delivery_instructions: Faker::Lorem.sentences(number: 1),
-    package_type: rand(1..4),
-    package_details: Faker::Lorem.sentences(number: 1),
+service5 = Service.create(
+    image_url: "https://www.vietnamairlines.com/fr/en/cargo/product-and-service/~/media/Images/VNANew/Cargo/product-and-services/005_wetCargo.ashx",
+    category: "Perishable Items",
+    description: "Same-day delivery is the act of delivering a package the same day it was sent. If a package is delivered before noon, for example, it will be delivered the same day, in the afternoon. Companies that offer this service advertise it as a same-day service."
 )
-end
+service6 = Service.create(
+    image_url: "https://i.pinimg.com/564x/ed/b5/fa/edb5fa86dfd287954847739585d13b47.jpg",
+    category: "Flammable Items",
+    description: "Same-day delivery is the act of delivering a package the same day it was sent. If a package is delivered before noon, for example, it will be delivered the same day, in the afternoon. Companies that offer this service advertise it as a same-day service."
+)
+service7 = Service.create(
+    image_url: "https://media.sciencephoto.com/image/f0220694/800wm",
+    category: "Bulk",
+    description: "We charge bulk services per CBM ( cubic meters ). We ship goods to county headquarters from where we distribute to other branches for collection."
+)
+service8 = Service.create(
+    image_url: "https://i.pinimg.com/236x/ef/4f/42/ef4f429cf7304f0c76a8f7c9e37fe24d.jpg",
+    category: "Fragile Goods",
+    description: "QuickFleet is a great option to trust for shipping your breakable products. QuickFleet can do the hard work for you by making sure your package is safe and intact. Plus, QuickFleet offers multiple shipping box sizes so they can customize a box fit for your needs."
+)
+
+# Receipt.create([
+#     {
+#     "receipt_no": "KEN123456",
+#     "sender_name": "Grace Neema",
+#     "receiver_name": "Marion Jefwa",
+#     "amount_paid": 8500,
+#     "nature_of_goods": "Flamable",
+#     "pickup": "Kawangware",
+#     "destination": "Kenyatta",
+#     "delivery_id": 1,
+#     "created_at": "2022-10-24T07:00:47.076Z",
+#     "updated_at": "2022-10-24T07:01:51.306Z"
+#     },
+#     {
+#     "receipt_no": "KEN4563211",
+#     "sender_name": "Neema Maitha",
+#     "receiver_name": "Tuma Marion",
+#     "amount_paid": 10000,
+#     "nature_of_goods": "Fragile",
+#     "pickup": "Moringa",
+#     "destination": "CBD",
+#     "delivery_id": 2,
+#     "created_at": "2022-10-24T07:03:48.845Z",
+#     "updated_at": "2022-10-24T07:03:48.845Z"
+#     },
+#     {
+#     "receipt_no": "KEN875543",
+#     "sender_name": "Nickson Shuku",
+#     "receiver_name": "Mkare Griffins",
+#     "amount_paid": 9000,
+#     "nature_of_goods": "Perishable",
+#     "pickup": "Kenyatta",
+#     "destination": "Zimmer",
+#     "delivery_id": 3,
+#     "created_at": "2022-10-24T07:05:17.263Z",
+#     "updated_at": "2022-10-24T07:05:17.263Z"
+#     },
+#     {
+#     "receipt_no": "KEN4563211",
+#     "sender_name": "Neema Maitha",
+#     "receiver_name": "Tuma Marion",
+#     "amount_paid": 10000,
+#     "nature_of_goods": "Fragile",
+#     "pickup": "Moringa",
+#     "destination": "CBD",
+#     "delivery_id": 4,
+#     "created_at": "2022-10-24T07:09:09.190Z",
+#     "updated_at": "2022-10-24T07:09:09.190Z"
+#     },
+#     {
+#     "receipt_no": "KEN875543",
+#     "sender_name": "Shuku Nickson",
+#     "receiver_name": "Griffins Mkare",
+#     "amount_paid": 9000,
+#     "nature_of_goods": "Perishable",
+#     "pickup": "Moringa",
+#     "destination": "Coptic",
+#     "delivery_id": 5,
+#     "created_at": "2022-10-24T07:24:43.210Z",
+#     "updated_at": "2022-10-24T07:24:43.210Z"
+#     }
+# ])
+
+# 5.times do
+# seeded_deliveries = Delivery.create!(
+#     receiver_name: Faker::Name.name,
+#     receiver_contact: Faker::PhoneNumber.cell_phone_with_country_code,
+#     pickup_instructions: Faker::Lorem.sentences(number: 1),
+#     delivery_instructions: Faker::Lorem.sentences(number: 1),
+#     package_type: rand(1..4),
+#     package_details: Faker::Lorem.sentences(number: 1),
+# )
+# end
 
 # 5.times do
 #     seeded_orders = Order.create(
@@ -105,8 +125,8 @@ end
 #         pickup:Faker::Address.mail_box,
 #         destination:Faker::Address.mail_box,
 #         service_id: rand(1..4),
-#         delivery_id: rand(1..5),
-#         receipt_id: rand(1..5)
+#         # delivery_id: rand(1..5),
+#         # receipt_id: rand(1..5)
 
 #     )
 # end
@@ -180,4 +200,26 @@ end
 # ]
 # )
 
-puts "End Seeding ....."
+# UseProfile.create([
+#     {
+#         avatar: "https://cdn.pixabay.com/photo/2014/12/16/21/59/gifts-570821_960_720.jpg",
+#         name: "Alvin Smith",
+#         email: "alvin@smith.com",
+#         telephone: "0712435659",
+#         location: "Nairobi"
+#     }
+# ])
+
+
+# UseProfile.all.each do |useProfile|
+#     rand(1..3).times do
+#       # get a random power
+#       order = Order.find(Order.pluck(:id).sample)
+#       HeroPower.create!(hero_id: hero.id, power_id: power.id, strength: [:Strong, :Weak, :Average].sample)
+#     end
+#   end
+# Status.create!( order_id: order_id, content: [:Pending, :Progress, :Delivered].sample)
+
+
+# puts "End Seeding ....."
+

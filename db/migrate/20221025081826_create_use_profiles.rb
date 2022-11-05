@@ -6,6 +6,7 @@ class CreateUseProfiles < ActiveRecord::Migration[7.0]
       t.string :email
       t.string :telephone
       t.string :location
+      t.integer :user_id
 
       t.timestamps
     end

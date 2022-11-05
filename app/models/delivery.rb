@@ -1,4 +1,4 @@
-class Delivery < ApplicationRecord
-    has_one :receipt
+ class Delivery < ApplicationRecord
+    # has_one :receipt
     # has_many :orders
 end

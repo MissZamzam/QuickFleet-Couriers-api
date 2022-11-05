@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_27_111859) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_04_080555) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -49,9 +49,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_27_111859) do
   end
 
   create_table "orders", force: :cascade do |t|
+    t.string "sender_name"
+    t.string "receiver_name"
+    t.string "nature_of_goods"
     t.string "pickup"
     t.string "destination"
-    t.integer "service_id"
+    t.integer "use_profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "senderName"
@@ -68,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_27_111859) do
     t.string "nature_of_goods"
     t.string "pickup"
     t.string "destination"
-    t.integer "delivery_id"
+    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -81,21 +84,37 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_27_111859) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "statuses", force: :cascade do |t|
+    t.integer "order_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "trackings", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "receipt_id"
     t.string "pickup"
     t.string "destination"
+    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "use_profiles", force: :cascade do |t|
     t.string "avatar"
-    t.string "name"
-    t.string "email"
     t.string "telephone"
     t.string "location"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "firstName"
+    t.string "lastName"
+  end
+
+  create_table "user_profiles", force: :cascade do |t|
+    t.string "firstName"
+    t.string "lastName"
+    t.string "location"
+    t.string "telephone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

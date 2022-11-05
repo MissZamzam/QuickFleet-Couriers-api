@@ -1,3 +1,3 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id, :senderName, :receiverName, :amountPaid, :natureOfGoods, :pickup, :destination
+  attributes :id, :senderName, :receiverName, :natureOfGoods, :pickup, :destination
 end

@@ -1,4 +1,3 @@
 class Tracking < ApplicationRecord
-    belongs_to :user
-    belongs_to :receipt
+    # belongs_to :order
 end

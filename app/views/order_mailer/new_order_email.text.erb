@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <h1>Dispatched Order</h1>
+  <p>Your order <%=@receipt.order_id%> has been dispatched!</p>
+
+  <p>It’s being shipped with Quick Fleet Courier Company.</p>
+
+  <p>Here’s a tracking number that you can use to check the status of your package: <a href = "/orders/:id"><%=@receipt.receipt_no%></a></p>.
+
+    <p>Sender: <%=@receipt.sender_name %></p>
+    <p>Receiver: <%=@receipt.receiver_name %></p>
+    <p>Source: <%=@receipt.pickup %></p>
+    <p>Destination: <%=@receipt.destination %></p>
+    <p>Nature of goods: <%=@receipt.nature_of_goods %></p>
+  </body>
+</html>

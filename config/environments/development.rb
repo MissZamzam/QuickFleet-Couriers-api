@@ -59,8 +59,38 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
+    # config.action_mailer.delivery_method = :smtp
+    # host = 'jannylynemiaz@gmail.com' #replace with your own url
+    # config.action_mailer.default_url_options = { host: host }
+
+# SMTP settings for gmail
+# config.action_mailer.smtp_settings = {
+#   address: "smtp.gmail.com",
+#   port:  587,
+#   domain: "example.com",            
+#   user_name:  ENV["GMAIL_USERNAME"],
+#   password:   ENV["GMAIL_PASSWORD"],
+#   authentication: "plain",
+#   enable_starttls_auto:  true
+# }
+
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :user_name => '2532ca4d5d524e',
+  :password => 'cc12552777fe81',
+  :address => 'smtp.mailtrap.io',
+  :domain => 'smtp.mailtrap.io',
+  :port => '2525',
+  :authentication => :cram_md5
+}
+config.action_mailer.default_url_options = { host: "send.smtp.mailtrap.io" }
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 end
+
+
+
+
+
